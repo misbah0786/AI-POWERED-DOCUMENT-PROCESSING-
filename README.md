@@ -31,6 +31,12 @@ This solution is ideal for businesses looking to automate the analysis of invoic
 -   **Invoice Analysis:** Utilize natural language processing to query invoice details such as totals, dates, and vendor information.
 -   **Customizable Workflow:** Easily adapt the code to handle different types of documents and extend its functionalities.
 -   **Open-Source:** Modify and extend the application to suit your needs.
+-   **Web-based Interface:** User-friendly Streamlit interface for easy interaction
+-   **File Upload:** Simple drag-and-drop PDF upload functionality
+-   **Interactive Chat:** Real-time conversation with the AI about the invoice contents
+-   **Conversation History:** View the entire Q&A history in a chat-like interface
+-   **PDF Preview:** Expandable view of the extracted PDF text
+-   **Multi-session Support:** Handle multiple users and conversations simultaneously
 
 ## Prerequisites
 
@@ -40,6 +46,7 @@ This solution is ideal for businesses looking to automate the analysis of invoic
     -   [python-dotenv](https://pypi.org/project/python-dotenv/)
     -   [pdfplumber](https://pypi.org/project/pdfplumber/)
     -   [groq](https://pypi.org/project/groq/)
+    -   [streamlit](https://streamlit.io)
 
 ## Setup and Installation
 
@@ -77,42 +84,29 @@ This solution is ideal for businesses looking to automate the analysis of invoic
 
 1. **Run the Application**
 
-    Start the application with:
+    Start the Streamlit application with:
 
     ```sh
-    python app.py
+    streamlit run app.py
     ```
 
-2. **Follow the On-Screen Instructions**
+2. **Using the Web Interface**
 
-    - **PDF Input:** When prompted, enter the path to your invoice PDF.
-    - **Text Extraction:** The application will extract text from the PDF and display a snippet.
-    - **Interactive Q&A:** Ask questions about the invoice (e.g., "What is the total amount?" or "When is the due date?"). Type `exit` or `quit` to end the session.
+    - The application will open in your default web browser
+    - Upload your PDF file using the file uploader
+    - Wait for the text extraction to complete
+    - Use the chat interface to ask questions about the invoice
+    - View the conversation history in the chat window
+    - Upload a new PDF at any time to start a fresh conversation
 
-3. **Example Interaction**
+3. **Example Questions**
 
-    ```
-    Enter the path to your PDF file: /path/to/invoice.pdf
+    You can ask questions like:
 
-    Extracting text from PDF...
-    Text extraction successful.
-
-    --- Extracted Text Snippet ---
-    --- Page 1 ---
-    Invoice Number: 12345
-    Date: 09/02/2025
-    Total: $500.00
-    ...
-
-    PDF processing complete. You can now ask questions about the PDF.
-    Type 'exit' or 'quit' to end the session.
-
-    Your question: What is the invoice number?
-    Answer: 12345
-
-    Your question: exit
-    Exiting the Q&A session.
-    ```
+    - "What is the total amount on this invoice?"
+    - "Who is the vendor?"
+    - "When is the payment due?"
+    - "What are the line items in this invoice?"
 
 ## Project Structure
 
